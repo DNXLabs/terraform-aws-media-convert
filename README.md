@@ -82,6 +82,42 @@ What does it do ?
 
 <!--- BEGIN_TF_DOCS --->
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13.0 |
+| aws | >= 3.13, < 4.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| archive | n/a |
+| aws | >= 3.13, < 4.0 |
+| local | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| bucket\_event\_prefix | Element prefix to trigger lambda function. | `string` | `"input/"` | no |
+| bucket\_event\_suffix | Element suffix to trigger lambda function. | `string` | `".mp4"` | no |
+| input\_bucket\_name | Input bucket name which contains videos to be transcoded. | `string` | n/a | yes |
+| media\_convert\_config | AWS Element MediaConvert API endpoint. | `string` | n/a | yes |
+| media\_convert\_config\_name | AWS Element MediaConvert API endpoint. | `string` | `"config"` | no |
+| mediaconvert\_endpoint | AWS Element MediaConvert API endpoint. e.g https://abcd1234.mediaconvert.us-west-2.amazonaws.com | `string` | n/a | yes |
+| output\_bucket\_name | Output bucket name which contains videos after transcoding. | `string` | n/a | yes |
+| project\_base\_name | Project name. | `string` | `"my_workflow_vod"` | no |
+| region | AWS region | `string` | `"us-west-2"` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| lambda\_role\_name | n/a |
+| mediaconvert\_role\_name | n/a |
+
 <!--- END_TF_DOCS --->
 
 ## Authors
